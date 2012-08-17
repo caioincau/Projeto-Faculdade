@@ -19,6 +19,11 @@ public class CalculadoraGUI {
 	public JFrame getFrame(){
 		return frame;
 	}
+	
+	public JTextField getDisplay() {
+		return display;
+	}
+
 	/**
 	 * Create the application.
 	 */

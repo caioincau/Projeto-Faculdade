@@ -6,7 +6,8 @@ public class Calculadora  {
 	
 	private CalculadoraGUI gui;
 	private Display display;
-
+	private double valorInicial;
+	private char op;
 	public Calculadora() {
 		gui = new CalculadoraGUI(this);
 		display = new Display(gui);
@@ -38,7 +39,7 @@ public class Calculadora  {
 	}
 
 	public void processaCE() {
-		display.atualiza("");
+		display.setDisplay("");
 	}
 
 	public void processaC() {
@@ -47,13 +48,13 @@ public class Calculadora  {
 	}
 
 	public void processaRaiz() {
-		// TODO Auto-generated method stub
-		
+		double p = Double.parseDouble(display.getDisplay());
+		display.setDisplay(String.valueOf(Math.sqrt(p)));
 	}
 
 	public void processaMaisOuMenos() {
-		// TODO Auto-generated method stub
-		
+		double p = Double.parseDouble(display.getDisplay());
+		display.setDisplay(String.valueOf(p*-1));
 	}
 
 	public void processaFatorial() {
@@ -136,8 +137,6 @@ public class Calculadora  {
 	}
 
 	public void processaIgual() {
-		// TODO Auto-generated method stub
-		
 	}
 
 	public void processaLog() {
