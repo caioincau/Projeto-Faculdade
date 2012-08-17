@@ -1,5 +1,11 @@
 package br.faccamp.domain;
 
+import br.faccamp.calculadores.Adicao;
+import br.faccamp.calculadores.Calculavel;
+import br.faccamp.calculadores.Divisor;
+import br.faccamp.calculadores.Multiplicador;
+import br.faccamp.calculadores.Potencia;
+import br.faccamp.calculadores.Subracao;
 import br.faccamp.view.CalculadoraGUI;
 
 public class Calculadora  {
@@ -7,7 +13,7 @@ public class Calculadora  {
 	private CalculadoraGUI gui;
 	private Display display;
 	private double valorInicial;
-	private char op;
+	Calculavel calculavel;
 	public Calculadora() {
 		gui = new CalculadoraGUI(this);
 		display = new Display(gui);
@@ -75,8 +81,9 @@ public class Calculadora  {
 	}
 
 	public void processaDivisao() {
-		// TODO Auto-generated method stub
-		
+		valorInicial = retornaDoubleDaView();
+		calculavel = new Divisor();
+		display.setDisplay("");
 	}
 
 	public void processaPorcentual() {
@@ -97,8 +104,9 @@ public class Calculadora  {
 	}
 
 	public void processaVezes() {
-		// TODO Auto-generated method stub
-		
+		valorInicial = retornaDoubleDaView();
+		calculavel = new Multiplicador();
+		display.setDisplay("");
 	}
 
 	public void processaUmSobreX() {
@@ -119,13 +127,22 @@ public class Calculadora  {
 	}
 
 	public void processaMenos() {
-		// TODO Auto-generated method stub
+		valorInicial = retornaDoubleDaView();
+		calculavel = new Subracao();
+		display.setDisplay("");
 		
 	}
 
 	public void processaXElevadoY() {
-		// TODO Auto-generated method stub
-		
+		valorInicial = retornaDoubleDaView();
+		calculavel = new Potencia();
+		display.setDisplay("");
+	}
+
+	public void processaMais() {
+		valorInicial = retornaDoubleDaView();
+		calculavel = new Adicao();
+		display.setDisplay("");
 	}
 
 	public void processaZero() {
@@ -137,6 +154,8 @@ public class Calculadora  {
 	}
 
 	public void processaIgual() {
+		double calcula = calculavel.calcula(valorInicial, retornaDoubleDaView());
+		display.setDisplay(String.valueOf(calcula));
 	}
 
 	public void processaLog() {
@@ -155,4 +174,5 @@ public class Calculadora  {
 	public double retornaDoubleDaView(){
 		return Double.parseDouble(display.getDisplay());
 	}
+	
 }

@@ -302,6 +302,7 @@ public class CalculadoraGUI {
 		JButton buttonMais = new JButton("+");
 		buttonMais.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				calculadora.processaMais();
 			}
 		});
 		buttonMais.setBounds(265, 322, 63, 39);
