@@ -48,18 +48,18 @@ public class Calculadora  {
 	}
 
 	public void processaRaiz() {
-		double p = Double.parseDouble(display.getDisplay());
+		double p = retornaDoubleDaView();
 		display.setDisplay(String.valueOf(Math.sqrt(p)));
 	}
 
 	public void processaMaisOuMenos() {
-		double p = Double.parseDouble(display.getDisplay());
+		double p = retornaDoubleDaView();
 		display.setDisplay(String.valueOf(p*-1));
 	}
 
 	public void processaFatorial() {
-		// TODO Auto-generated method stub
-		
+		long fatorial = fatorial((long)retornaDoubleDaView());
+		display.setDisplay(String.valueOf(fatorial));
 	}
 
 	public void processaSete() {
@@ -102,8 +102,8 @@ public class Calculadora  {
 	}
 
 	public void processaUmSobreX() {
-		// TODO Auto-generated method stub
-		
+		double p = retornaDoubleDaView();
+		display.setDisplay(String.valueOf(1/p));
 	}
 
 	public void processaUm() {
@@ -144,4 +144,14 @@ public class Calculadora  {
 		
 	}
 
+	public static long fatorial(long number) {
+		if (number == 0) {
+			return 1;
+		}
+
+		return number * fatorial(number - 1);
+	}
+	public double retornaDoubleDaView(){
+		return Double.parseDouble(display.getDisplay());
+	}
 }
