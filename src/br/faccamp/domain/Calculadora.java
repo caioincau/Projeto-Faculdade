@@ -80,8 +80,8 @@ public class Calculadora  {
 	}
 
 	public void processaPorcentual() {
-		// TODO Auto-generated method stub
-		
+		double p = retornaDoubleDaView();
+		display.setDisplay(String.valueOf(p/100));
 	}
 
 	public void processaQuatro() {

@@ -323,6 +323,10 @@ public class CalculadoraGUI {
 		frame.getContentPane().setLayout(null);
 	}
 	public void atualizaDisplay(String texto) {
-		display.setText(display.getText()+texto);
+		if(display.getText().equalsIgnoreCase("") || display.getText()==null){
+			display.setText(texto);
+		}else{
+			display.setText(display.getText()+texto);
+		}
 	}
 }
