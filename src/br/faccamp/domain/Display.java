@@ -4,7 +4,6 @@ import br.faccamp.view.CalculadoraGUI;
 
 public class Display {
 	
-	private String display;
 	private CalculadoraGUI gui;
 
 	public Display(CalculadoraGUI gui) {
@@ -23,5 +22,8 @@ public class Display {
 		this.gui.getDisplay().setText(display);
 	}
 	
+	public double retornaDoubleDaView(){
+		return Double.parseDouble(getDisplay());
+	}
 
 }

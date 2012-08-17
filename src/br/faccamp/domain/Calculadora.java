@@ -55,17 +55,17 @@ public class Calculadora  {
 	}
 
 	public void processaRaiz() {
-		double p = retornaDoubleDaView();
+		double p = display.retornaDoubleDaView();
 		display.setDisplay(String.valueOf(Math.sqrt(p)));
 	}
 
 	public void processaMaisOuMenos() {
-		double p = retornaDoubleDaView();
+		double p = display.retornaDoubleDaView();
 		display.setDisplay(String.valueOf(p*-1));
 	}
 
 	public void processaFatorial() {
-		long fatorial = fatorial((long)retornaDoubleDaView());
+		long fatorial = fatorial((long)display.retornaDoubleDaView());
 		display.setDisplay(String.valueOf(fatorial));
 	}
 
@@ -82,13 +82,13 @@ public class Calculadora  {
 	}
 
 	public void processaDivisao() {
-		valorInicial = retornaDoubleDaView();
+		valorInicial = display.retornaDoubleDaView();
 		calculavel = new Divisor();
 		display.setDisplay("");
 	}
 
 	public void processaPorcentual() {
-		double p = retornaDoubleDaView();
+		double p = display.retornaDoubleDaView();
 		display.setDisplay(String.valueOf(p/100));
 	}
 
@@ -105,13 +105,13 @@ public class Calculadora  {
 	}
 
 	public void processaVezes() {
-		valorInicial = retornaDoubleDaView();
+		valorInicial = display.retornaDoubleDaView();
 		calculavel = new Multiplicador();
 		display.setDisplay("");
 	}
 
 	public void processaUmSobreX() {
-		double p = retornaDoubleDaView();
+		double p = display.retornaDoubleDaView();
 		display.setDisplay(String.valueOf(1/p));
 	}
 
@@ -128,20 +128,20 @@ public class Calculadora  {
 	}
 
 	public void processaMenos() {
-		valorInicial = retornaDoubleDaView();
+		valorInicial = display.retornaDoubleDaView();
 		calculavel = new Subracao();
 		display.setDisplay("");
 		
 	}
 
 	public void processaXElevadoY() {
-		valorInicial = retornaDoubleDaView();
+		valorInicial = display.retornaDoubleDaView();
 		calculavel = new Potencia();
 		display.setDisplay("");
 	}
 
 	public void processaMais() {
-		valorInicial = retornaDoubleDaView();
+		valorInicial = display.retornaDoubleDaView();
 		calculavel = new Adicao();
 		display.setDisplay("");
 	}
@@ -155,12 +155,12 @@ public class Calculadora  {
 	}
 
 	public void processaIgual() {
-		double calcula = calculavel.calcula(valorInicial, retornaDoubleDaView());
+		double calcula = calculavel.calcula(valorInicial, display.retornaDoubleDaView());
 		display.setDisplay(String.valueOf(calcula));
 	}
 
 	public void processaLog() {
-		double p = retornaDoubleDaView();
+		double p = display.retornaDoubleDaView();
 		display.setDisplay(String.valueOf(Math.log10(p)));
 		
 	}
@@ -172,8 +172,8 @@ public class Calculadora  {
 
 		return number * fatorial(number - 1);
 	}
-	public double retornaDoubleDaView(){
-		return Double.parseDouble(display.getDisplay());
-	}
+//	public double display.retornaDoubleDaView(){
+//		return Double.parseDouble(display.getDisplay());
+//	}
 	
 }
