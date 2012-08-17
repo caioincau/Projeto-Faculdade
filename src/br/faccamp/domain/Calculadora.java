@@ -49,8 +49,9 @@ public class Calculadora  {
 	}
 
 	public void processaC() {
-		// TODO Auto-generated method stub
-		
+		valorInicial = 0;
+		calculavel = null;
+		display.setDisplay("");
 	}
 
 	public void processaRaiz() {
