@@ -38,8 +38,7 @@ public class Calculadora  {
 	}
 
 	public void processaCE() {
-		// TODO Auto-generated method stub
-		
+		display.atualiza("");
 	}
 
 	public void processaC() {
@@ -63,18 +62,15 @@ public class Calculadora  {
 	}
 
 	public void processaSete() {
-		// TODO Auto-generated method stub
-		
+		display.atualiza("7");
 	}
 
 	public void processaOito() {
-		// TODO Auto-generated method stub
-		
+		display.atualiza("8");
 	}
 
 	public void processaNove() {
-		// TODO Auto-generated method stub
-		
+		display.atualiza("9");
 	}
 
 	public void processaDivisao() {
@@ -88,18 +84,15 @@ public class Calculadora  {
 	}
 
 	public void processaQuatro() {
-		// TODO Auto-generated method stub
-		
+		display.atualiza("4");
 	}
 
 	public void processaCinco() {
-		// TODO Auto-generated method stub
-		
+		display.atualiza("5");
 	}
 
 	public void processaSeis() {
-		// TODO Auto-generated method stub
-		
+		display.atualiza("6");
 	}
 
 	public void processaVezes() {
@@ -113,18 +106,15 @@ public class Calculadora  {
 	}
 
 	public void processaUm() {
-		// TODO Auto-generated method stub
-		
+		display.atualiza("1");
 	}
 
 	public void processaDois() {
-		// TODO Auto-generated method stub
-		
+		display.atualiza("2");
 	}
 
 	public void processaTres() {
-		// TODO Auto-generated method stub
-		
+		display.atualiza("3");
 	}
 
 	public void processaMenos() {
@@ -142,8 +132,7 @@ public class Calculadora  {
 	}
 
 	public void processaVirgula() {
-		// TODO Auto-generated method stub
-		
+		display.atualiza(".");
 	}
 
 	public void processaIgual() {

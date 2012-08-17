@@ -13,7 +13,7 @@ public class Display {
 	}
 
 	public void atualiza(String texto) {
-		gui.atualizaDisplay(texto);
+			gui.atualizaDisplay(texto);
 	}
 
 }

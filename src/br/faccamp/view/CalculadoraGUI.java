@@ -318,6 +318,6 @@ public class CalculadoraGUI {
 		frame.getContentPane().setLayout(null);
 	}
 	public void atualizaDisplay(String texto) {
-		display.setText(texto);
+		display.setText(display.getText()+texto);
 	}
 }
