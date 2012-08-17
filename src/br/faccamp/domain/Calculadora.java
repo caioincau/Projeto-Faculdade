@@ -140,7 +140,8 @@ public class Calculadora  {
 	}
 
 	public void processaLog() {
-		// TODO Auto-generated method stub
+		double p = retornaDoubleDaView();
+		display.setDisplay(String.valueOf(Math.log10(p)));
 		
 	}
 
