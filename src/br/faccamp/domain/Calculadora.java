@@ -26,8 +26,7 @@ public class Calculadora  {
 	}
 
 	public void processaMC() {
-		// TODO Auto-generated method stub
-		
+		memoria = 0;
 	}
 
 	public void processaMR() {
