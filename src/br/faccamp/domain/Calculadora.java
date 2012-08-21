@@ -18,6 +18,7 @@ public class Calculadora  {
 	private double valorInicial;
 	Calculavel calculavel;
 	public List<Double> valores;
+	private double memoria;
 	public Calculadora() {
 		gui = new CalculadoraGUI(this);
 		display = new Display(gui);
@@ -30,8 +31,7 @@ public class Calculadora  {
 	}
 
 	public void processaMR() {
-		// TODO Auto-generated method stub
-		
+		display.setDisplay(String.valueOf(memoria));
 	}
 
 	public void processaMS() {
@@ -40,13 +40,11 @@ public class Calculadora  {
 	}
 
 	public void processaMMais() {
-		// TODO Auto-generated method stub
-		
+		memoria+=display.retornaDoubleDaView();
 	}
 
 	public void processaMMenos() {
-		// TODO Auto-generated method stub
-		
+		memoria-=display.retornaDoubleDaView();
 	}
 
 	public void processaCE() {
