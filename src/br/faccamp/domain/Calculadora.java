@@ -1,5 +1,8 @@
 package br.faccamp.domain;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import br.faccamp.calculadores.Adicao;
 import br.faccamp.calculadores.Calculavel;
 import br.faccamp.calculadores.Divisor;
@@ -14,9 +17,11 @@ public class Calculadora  {
 	private Display display;
 	private double valorInicial;
 	Calculavel calculavel;
+	public List<Double> valores;
 	public Calculadora() {
 		gui = new CalculadoraGUI(this);
 		display = new Display(gui);
+		valores = new ArrayList<Double>();
 	}
 
 	public void processaMC() {
@@ -57,16 +62,19 @@ public class Calculadora  {
 	public void processaRaiz() {
 		double p = display.retornaDoubleDaView();
 		display.setDisplay(String.valueOf(Math.sqrt(p)));
+		addNaLista();
 	}
 
 	public void processaMaisOuMenos() {
 		double p = display.retornaDoubleDaView();
 		display.setDisplay(String.valueOf(p*-1));
+		addNaLista();
 	}
 
 	public void processaFatorial() {
 		long fatorial = fatorial((long)display.retornaDoubleDaView());
 		display.setDisplay(String.valueOf(fatorial));
+		addNaLista();
 	}
 
 	public void processaSete() {
@@ -83,6 +91,7 @@ public class Calculadora  {
 
 	public void processaDivisao() {
 		valorInicial = display.retornaDoubleDaView();
+		addNaLista();
 		calculavel = new Divisor();
 		display.setDisplay("");
 	}
@@ -90,6 +99,7 @@ public class Calculadora  {
 	public void processaPorcentual() {
 		double p = display.retornaDoubleDaView();
 		display.setDisplay(String.valueOf(p/100));
+		addNaLista();
 	}
 
 	public void processaQuatro() {
@@ -106,6 +116,7 @@ public class Calculadora  {
 
 	public void processaVezes() {
 		valorInicial = display.retornaDoubleDaView();
+		addNaLista();
 		calculavel = new Multiplicador();
 		display.setDisplay("");
 	}
@@ -113,6 +124,7 @@ public class Calculadora  {
 	public void processaUmSobreX() {
 		double p = display.retornaDoubleDaView();
 		display.setDisplay(String.valueOf(1/p));
+		addNaLista();
 	}
 
 	public void processaUm() {
@@ -129,6 +141,7 @@ public class Calculadora  {
 
 	public void processaMenos() {
 		valorInicial = display.retornaDoubleDaView();
+		addNaLista();
 		calculavel = new Subracao();
 		display.setDisplay("");
 		
@@ -136,12 +149,14 @@ public class Calculadora  {
 
 	public void processaXElevadoY() {
 		valorInicial = display.retornaDoubleDaView();
+		addNaLista();
 		calculavel = new Potencia();
 		display.setDisplay("");
 	}
 
 	public void processaMais() {
 		valorInicial = display.retornaDoubleDaView();
+		addNaLista();
 		calculavel = new Adicao();
 		display.setDisplay("");
 	}
@@ -157,11 +172,14 @@ public class Calculadora  {
 	public void processaIgual() {
 		double calcula = calculavel.calcula(valorInicial, display.retornaDoubleDaView());
 		display.setDisplay(String.valueOf(calcula));
+		addNaLista();
+		System.out.println(valores.size());
 	}
 
 	public void processaLog() {
 		double p = display.retornaDoubleDaView();
 		display.setDisplay(String.valueOf(Math.log10(p)));
+		addNaLista();
 		
 	}
 
@@ -172,8 +190,9 @@ public class Calculadora  {
 
 		return number * fatorial(number - 1);
 	}
-//	public double display.retornaDoubleDaView(){
-//		return Double.parseDouble(display.getDisplay());
-//	}
+	
+	public void addNaLista(){
+		valores.add(display.retornaDoubleDaView());
+	}
 	
 }
