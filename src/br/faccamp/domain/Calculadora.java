@@ -8,7 +8,7 @@ import br.faccamp.calculadores.Calculavel;
 import br.faccamp.calculadores.Divisor;
 import br.faccamp.calculadores.Multiplicador;
 import br.faccamp.calculadores.Potencia;
-import br.faccamp.calculadores.Subracao;
+import br.faccamp.calculadores.Subtracao;
 import br.faccamp.view.CalculadoraGUI;
 
 public class Calculadora  {
@@ -139,7 +139,7 @@ public class Calculadora  {
 	public void processaMenos() {
 		valorInicial = display.retornaDoubleDaView();
 		addNaLista();
-		calculavel = new Subracao();
+		calculavel = new Subtracao();
 		display.setDisplay("");
 		
 	}
@@ -191,5 +191,6 @@ public class Calculadora  {
 	public void addNaLista(){
 		valores.add(display.retornaDoubleDaView());
 	}
+	
 	
 }
