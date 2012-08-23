@@ -330,4 +330,5 @@ public class CalculadoraGUI {
 			display.setText(display.getText()+texto);
 		}
 	}
+	
 }

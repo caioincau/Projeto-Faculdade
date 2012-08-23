@@ -34,7 +34,6 @@ public class Calculadora  {
 	}
 
 	public void processaMS() {
-		// TODO Auto-generated method stub
 		
 	}
 
@@ -170,14 +169,12 @@ public class Calculadora  {
 		double calcula = calculavel.calcula(valorInicial, display.retornaDoubleDaView());
 		display.setDisplay(String.valueOf(calcula));
 		addNaLista();
-		System.out.println(valores.size());
 	}
 
 	public void processaLog() {
 		double p = display.retornaDoubleDaView();
 		display.setDisplay(String.valueOf(Math.log10(p)));
 		addNaLista();
-		
 	}
 
 	public static long fatorial(long number) {
@@ -191,6 +188,19 @@ public class Calculadora  {
 	public void addNaLista(){
 		valores.add(display.retornaDoubleDaView());
 	}
+
+	public double getMemoria() {
+		return memoria;
+	}
+
+	public Display getDisplay() {
+		return display;
+	}
+
+	public List<Double> getValores() {
+		return valores;
+	}
 	
 	
+
 }
