@@ -11,4 +11,9 @@ public class Divisor implements Calculavel {
 		}
 	}
 
+	@Override
+	public String operacao() {
+		return "/";
+	}
+
 }

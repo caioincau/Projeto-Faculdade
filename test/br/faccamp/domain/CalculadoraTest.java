@@ -2,6 +2,8 @@ package br.faccamp.domain;
 
 import static org.junit.Assert.*;
 
+import java.io.IOException;
+
 import org.junit.Before;
 import org.junit.Test;
 
@@ -115,7 +117,7 @@ public class CalculadoraTest {
 	}
 	
 	@Test
-	public void deveRetornarOFatorialDeOito(){
+	public void deveRetornarOFatorialDeOito() throws IOException{
 		calculadora.processaOito();
 		calculadora.processaFatorial();
 		assertEquals(40320, calculadora.getDisplay().retornaDoubleDaView(),0);

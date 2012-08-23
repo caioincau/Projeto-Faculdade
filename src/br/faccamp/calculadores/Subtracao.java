@@ -7,4 +7,10 @@ public class Subtracao implements Calculavel {
 		return a-p;
 	}
 
+	@Override
+	public String operacao() {
+		// TODO Auto-generated method stub
+		return "-";
+	}
+
 }

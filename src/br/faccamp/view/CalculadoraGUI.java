@@ -2,6 +2,7 @@ package br.faccamp.view;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.IOException;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -113,7 +114,12 @@ public class CalculadoraGUI {
 		JButton btnRaiz = new JButton("Raiz");
 		btnRaiz.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				calculadora.processaRaiz();
+				try {
+					calculadora.processaRaiz();
+				} catch (IOException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
 			}
 		});
 		btnRaiz.setBounds(265, 130, 63, 39);
@@ -131,7 +137,12 @@ public class CalculadoraGUI {
 		JButton btnFatorial = new JButton("n!");
 		btnFatorial.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				calculadora.processaFatorial();
+				try {
+					calculadora.processaFatorial();
+				} catch (IOException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
 			}
 		});
 		btnFatorial.setBounds(340, 130, 63, 39);
@@ -176,7 +187,12 @@ public class CalculadoraGUI {
 		JButton buttonPercentual = new JButton("%");
 		buttonPercentual.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				calculadora.processaPorcentual();
+				try {
+					calculadora.processaPorcentual();
+				} catch (IOException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
 			}
 		});
 		buttonPercentual.setBounds(340, 181, 63, 39);
@@ -221,7 +237,12 @@ public class CalculadoraGUI {
 		JButton btnUmSobreX = new JButton("1/x");
 		btnUmSobreX.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				calculadora.processaUmSobreX();
+				try {
+					calculadora.processaUmSobreX();
+				} catch (IOException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
 			}
 		});
 		btnUmSobreX.setBounds(340, 232, 63, 39);
@@ -293,7 +314,11 @@ public class CalculadoraGUI {
 		JButton buttonIgual = new JButton("=");
 		buttonIgual.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				calculadora.processaIgual();
+				try {
+					calculadora.processaIgual();
+				} catch (IOException e1) {
+					e1.printStackTrace();
+				}
 			}
 		});
 		buttonIgual.setBounds(190, 322, 63, 39);

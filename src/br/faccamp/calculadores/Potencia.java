@@ -7,4 +7,9 @@ public class Potencia implements Calculavel {
 		return Math.pow(a, p);
 	}
 
+	@Override
+	public String operacao() {
+		return "Pow";
+	}
+
 }

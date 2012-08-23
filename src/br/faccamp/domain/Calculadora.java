@@ -1,5 +1,8 @@
 package br.faccamp.domain;
 
+import br.faccamp.csv.*;
+
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -19,10 +22,12 @@ public class Calculadora  {
 	Calculavel calculavel;
 	public List<Double> valores;
 	private double memoria;
+	private CSVWriter csv;
 	public Calculadora() {
 		gui = new CalculadoraGUI(this);
 		display = new Display(gui);
 		valores = new ArrayList<Double>();
+		this.csv = new CSVWriter();
 	}
 
 	public void processaMC() {
@@ -55,9 +60,11 @@ public class Calculadora  {
 		display.setDisplay("");
 	}
 
-	public void processaRaiz() {
+	public void processaRaiz() throws IOException {
 		double p = display.retornaDoubleDaView();
+		csv.writeOnCSV("Raiz de " + p);
 		display.setDisplay(String.valueOf(Math.sqrt(p)));
+		escreveOResultado();
 		addNaLista();
 	}
 
@@ -67,9 +74,12 @@ public class Calculadora  {
 		addNaLista();
 	}
 
-	public void processaFatorial() {
+	public void processaFatorial() throws IOException {
 		long fatorial = fatorial((long)display.retornaDoubleDaView());
+		csv.writeOnCSV(String.valueOf(display.retornaDoubleDaView())+"!");
 		display.setDisplay(String.valueOf(fatorial));
+		escreveOResultado();
+
 		addNaLista();
 	}
 
@@ -92,9 +102,12 @@ public class Calculadora  {
 		display.setDisplay("");
 	}
 
-	public void processaPorcentual() {
+	public void processaPorcentual() throws IOException {
 		double p = display.retornaDoubleDaView();
+		csv.writeOnCSV(p+ " / 100");
 		display.setDisplay(String.valueOf(p/100));
+		escreveOResultado();
+
 		addNaLista();
 	}
 
@@ -117,9 +130,11 @@ public class Calculadora  {
 		display.setDisplay("");
 	}
 
-	public void processaUmSobreX() {
+	public void processaUmSobreX() throws IOException {
 		double p = display.retornaDoubleDaView();
 		display.setDisplay(String.valueOf(1/p));
+		csv.writeOnCSV("1 / "+p);
+		escreveOResultado();
 		addNaLista();
 	}
 
@@ -165,10 +180,22 @@ public class Calculadora  {
 		display.atualiza(".");
 	}
 
-	public void processaIgual() {
+	public void processaIgual() throws IOException {
 		double calcula = calculavel.calcula(valorInicial, display.retornaDoubleDaView());
+		preparaParaEscrever();
 		display.setDisplay(String.valueOf(calcula));
+		escreveOResultado();
 		addNaLista();
+	}
+
+	private void escreveOResultado() throws IOException {
+		csv.writeOnCSV(String.valueOf(display.retornaDoubleDaView()));
+	}
+
+	private void preparaParaEscrever() throws IOException {
+		csv.writeOnCSV(String.valueOf(valores.get(valores.size()-1)));
+		csv.writeOnCSV(calculavel.operacao());
+		escreveOResultado();
 	}
 
 	public void processaLog() {

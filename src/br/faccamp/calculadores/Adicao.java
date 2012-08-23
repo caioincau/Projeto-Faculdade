@@ -7,4 +7,9 @@ public class Adicao implements Calculavel {
 		return a+p;
 	}
 
+	@Override
+	public String operacao() {
+		return "+";
+	}
+
 }
