@@ -122,4 +122,12 @@ public class CalculadoraTest {
 		calculadora.processaFatorial();
 		assertEquals(40320, calculadora.getDisplay().retornaDoubleDaView(),0);
 	}
+	@Test
+	public void naoDeveColocarMaisDeUmaVirgula() throws IOException{
+		calculadora.processaOito();
+		calculadora.processaVirgula();
+		calculadora.processaCinco();
+		calculadora.processaVirgula();
+		assertEquals(8.5, calculadora.getDisplay().retornaDoubleDaView(),0);
+	}
 }

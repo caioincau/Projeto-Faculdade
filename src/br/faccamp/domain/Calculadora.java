@@ -177,7 +177,9 @@ public class Calculadora  {
 	}
 
 	public void processaVirgula() {
-		display.atualiza(".");
+		if (display.getDisplay().indexOf('.')==-1) {
+			display.atualiza(".");
+		}
 	}
 
 	public void processaIgual() throws IOException {
