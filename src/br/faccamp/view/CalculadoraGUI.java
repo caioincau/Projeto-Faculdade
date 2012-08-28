@@ -2,14 +2,20 @@ package br.faccamp.view;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
 import java.io.IOException;
 
+import javax.swing.Action;
+import javax.swing.ActionMap;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JTextField;
+import javax.swing.KeyStroke;
 
 import br.faccamp.domain.Calculadora;
 import javax.swing.SwingConstants;
+import javax.swing.JPanel;
 
 public class CalculadoraGUI {
 
@@ -355,5 +361,4 @@ public class CalculadoraGUI {
 			display.setText(display.getText()+texto);
 		}
 	}
-	
 }
