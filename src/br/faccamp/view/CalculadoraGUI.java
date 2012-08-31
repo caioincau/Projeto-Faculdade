@@ -10,6 +10,7 @@ import javax.swing.Action;
 import javax.swing.ActionMap;
 import javax.swing.JButton;
 import javax.swing.JFrame;
+import javax.swing.JMenuBar;
 import javax.swing.JTextField;
 import javax.swing.KeyStroke;
 
@@ -160,6 +161,7 @@ public class CalculadoraGUI {
 				calculadora.processaSete();
 			}
 		});
+		buttonSete.setMnemonic(java.awt.event.KeyEvent.VK_NUMPAD7);
 		buttonSete.setBounds(45, 181, 63, 39);
 		frame.getContentPane().add(buttonSete);
 		
@@ -170,6 +172,7 @@ public class CalculadoraGUI {
 			}
 		});
 		buttonOito.setBounds(115, 181, 63, 39);
+		buttonOito.setMnemonic(java.awt.event.KeyEvent.VK_NUMPAD8);
 		frame.getContentPane().add(buttonOito);
 		
 		JButton buttonNove = new JButton("9");
@@ -179,6 +182,7 @@ public class CalculadoraGUI {
 			}
 		});
 		buttonNove.setBounds(190, 181, 63, 39);
+		buttonNove.setMnemonic(java.awt.event.KeyEvent.VK_NUMPAD8);
 		frame.getContentPane().add(buttonNove);
 		
 		JButton buttonDivisao = new JButton("/");
@@ -211,6 +215,7 @@ public class CalculadoraGUI {
 			}
 		});
 		buttonQuatro.setBounds(45, 232, 63, 39);
+		buttonQuatro.setMnemonic(java.awt.event.KeyEvent.VK_NUMPAD4);
 		frame.getContentPane().add(buttonQuatro);
 		
 		JButton buttonCinco = new JButton("5");
@@ -220,6 +225,7 @@ public class CalculadoraGUI {
 			}
 		});
 		buttonCinco.setBounds(115, 232, 63, 39);
+		buttonCinco.setMnemonic(java.awt.event.KeyEvent.VK_NUMPAD5);
 		frame.getContentPane().add(buttonCinco);
 		
 		JButton buttonSeis = new JButton("6");
@@ -229,6 +235,7 @@ public class CalculadoraGUI {
 			}
 		});
 		buttonSeis.setBounds(190, 232, 63, 39);
+		buttonSeis.setMnemonic(java.awt.event.KeyEvent.VK_NUMPAD6);
 		frame.getContentPane().add(buttonSeis);
 		
 		JButton buttonVezes = new JButton("*");
@@ -261,6 +268,7 @@ public class CalculadoraGUI {
 			}
 		});
 		buttonUm.setBounds(45, 280, 63, 39);
+		buttonUm.setMnemonic(java.awt.event.KeyEvent.VK_NUMPAD1);
 		frame.getContentPane().add(buttonUm);
 		
 		JButton buttonDois = new JButton("2");
@@ -270,6 +278,7 @@ public class CalculadoraGUI {
 			}
 		});
 		buttonDois.setBounds(115, 280, 63, 39);
+		buttonDois.setMnemonic(java.awt.event.KeyEvent.VK_NUMPAD2);
 		frame.getContentPane().add(buttonDois);
 		
 		JButton buttonTres = new JButton("3");
@@ -279,6 +288,7 @@ public class CalculadoraGUI {
 			}
 		});
 		buttonTres.setBounds(190, 280, 63, 39);
+		buttonTres.setMnemonic(java.awt.event.KeyEvent.VK_NUMPAD3);
 		frame.getContentPane().add(buttonTres);
 		
 		JButton buttonMenos = new JButton("-");
@@ -328,6 +338,7 @@ public class CalculadoraGUI {
 			}
 		});
 		buttonIgual.setBounds(190, 322, 63, 39);
+		buttonIgual.setMnemonic(java.awt.event.KeyEvent.VK_EQUALS);
 		frame.getContentPane().add(buttonIgual);
 		
 		JButton buttonMais = new JButton("+");
@@ -347,6 +358,10 @@ public class CalculadoraGUI {
 		});
 		btnLog.setBounds(340, 322, 63, 39);
 		frame.getContentPane().add(btnLog);
+		
+		JMenuBar menuBar = new JMenuBar();
+		menuBar.setBounds(45, 283, 132, 22);
+		frame.getContentPane().add(menuBar);
 	}
 	private void createMainFrame() {
 		frame = new JFrame();
