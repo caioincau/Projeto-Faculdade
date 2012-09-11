@@ -14,12 +14,6 @@ public class CSVWriter {
         printWriter.print(",");
         printWriter.flush();
         printWriter.close();
-        
-//		BufferedWriter out = new BufferedWriter(new FileWriter("result.csv"));
-//		out.append(valor);
-//		out.append(',');
-//		out.flush();
-//		out.close();
 	}
 	
 }
