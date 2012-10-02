@@ -10,6 +10,7 @@ import javax.swing.Action;
 import javax.swing.ActionMap;
 import javax.swing.JButton;
 import javax.swing.JFrame;
+import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JTextField;
 import javax.swing.KeyStroke;
@@ -362,6 +363,24 @@ public class CalculadoraGUI {
 		JMenuBar menuBar = new JMenuBar();
 		menuBar.setBounds(45, 283, 132, 22);
 		frame.getContentPane().add(menuBar);
+		
+		JButton buttonUndo = new JButton("Undo");
+		buttonUndo.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				System.out.println("Click Undo");
+			}
+		});
+		buttonUndo.setBounds(45, 26, 63, 39);
+		frame.getContentPane().add(buttonUndo);
+		
+		JButton buttonRedo = new JButton("Redo");
+		buttonRedo.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				System.out.println("Click Redo");
+			}
+		});
+		buttonRedo.setBounds(340, 26, 63, 39);
+		frame.getContentPane().add(buttonRedo);
 	}
 	private void createMainFrame() {
 		frame = new JFrame();
