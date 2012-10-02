@@ -130,4 +130,15 @@ public class CalculadoraTest {
 		calculadora.processaVirgula();
 		assertEquals(8.5, calculadora.getDisplay().retornaDoubleDaView(),0);
 	}
+	
+	@Test
+	public void deveFazerOUndo() throws Exception {
+		calculadora.getDisplay().setDisplay("100");
+		calculadora.processaDivisao();
+		calculadora.getDisplay().setDisplay("10");
+		calculadora.processaIgual();
+		calculadora.processaC();
+		calculadora.processaUndo();
+		assertEquals(10, calculadora.getDisplay().retornaDoubleDaView(),0);
+	}
 }

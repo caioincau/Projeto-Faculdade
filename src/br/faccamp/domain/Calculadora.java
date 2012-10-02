@@ -185,8 +185,8 @@ public class Calculadora  {
 	}
 	public void processaUndo() {
 		try {
-			indice -= 1;
 			display.setDisplay(String.valueOf(valores.get(indice)));
+			indice -= 1;
 		} catch (Exception e) {
 			throw new RuntimeException();
 		}
@@ -195,9 +195,8 @@ public class Calculadora  {
 
 	public void processaRedo() {
 		try {
-			indice += 1;
-
 			display.setDisplay(String.valueOf(valores.get(indice)));
+			indice += 1;
 
 		} catch (Exception e) {
 			throw new RuntimeException();
