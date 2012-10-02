@@ -23,11 +23,13 @@ public class Calculadora  {
 	public List<Double> valores;
 	private double memoria;
 	private CSVWriter csv;
+	private int indice;
 	public Calculadora() {
 		gui = new CalculadoraGUI(this);
 		display = new Display(gui);
 		valores = new ArrayList<Double>();
 		this.csv = new CSVWriter();
+		this.indice = -1;
 	}
 
 	public void processaMC() {
@@ -181,6 +183,27 @@ public class Calculadora  {
 			display.atualiza(".");
 		}
 	}
+	public void processaUndo() {
+		try {
+			indice -= 1;
+			display.setDisplay(String.valueOf(valores.get(indice)));
+		} catch (Exception e) {
+			throw new RuntimeException();
+		}
+
+	}
+
+	public void processaRedo() {
+		try {
+			indice += 1;
+
+			display.setDisplay(String.valueOf(valores.get(indice)));
+
+		} catch (Exception e) {
+			throw new RuntimeException();
+		}
+		}
+
 
 	public void processaIgual() throws IOException {
 		double calcula = calculavel.calcula(valorInicial, display.retornaDoubleDaView());
@@ -216,6 +239,7 @@ public class Calculadora  {
 	
 	public void addNaLista(){
 		valores.add(display.retornaDoubleDaView());
+		indice+=1;
 	}
 
 	public double getMemoria() {

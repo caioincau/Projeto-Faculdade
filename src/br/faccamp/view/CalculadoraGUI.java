@@ -367,7 +367,7 @@ public class CalculadoraGUI {
 		JButton buttonUndo = new JButton("Undo");
 		buttonUndo.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				System.out.println("Click Undo");
+				calculadora.processaUndo();
 			}
 		});
 		buttonUndo.setBounds(45, 26, 63, 39);
@@ -376,7 +376,7 @@ public class CalculadoraGUI {
 		JButton buttonRedo = new JButton("Redo");
 		buttonRedo.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				System.out.println("Click Redo");
+				calculadora.processaRedo();
 			}
 		});
 		buttonRedo.setBounds(340, 26, 63, 39);
