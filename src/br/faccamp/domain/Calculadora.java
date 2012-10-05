@@ -105,12 +105,18 @@ public class Calculadora  {
 	}
 
 	public void processaPorcentual() throws IOException {
-		double p = display.retornaDoubleDaView();
-		csv.writeOnCSV(p+ " / 100");
-		display.setDisplay(String.valueOf(p/100));
-		escreveOResultado();
+//		double p = display.retornaDoubleDaView();
+//		csv.writeOnCSV(p+ " / 100");
+//		display.setDisplay(String.valueOf(p/100));
+		if(calculavel != null){
+			double primeiro = new Double(valorInicial);
+			double segundo = new Double(display.getDisplay());
+			segundo = (primeiro * segundo) / 100;
+			display.setDisplay(String.valueOf(segundo));
+			escreveOResultado();
 
-		addNaLista();
+			addNaLista();
+		}
 	}
 
 	public void processaQuatro() {
@@ -229,7 +235,7 @@ public class Calculadora  {
 	}
 
 	public static long fatorial(long number) {
-		if (number == 0) {
+		if (number == 0 || number ==1) {
 			return 1;
 		}
 
