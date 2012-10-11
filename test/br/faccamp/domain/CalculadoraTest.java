@@ -113,7 +113,7 @@ public class CalculadoraTest {
 	public void deveRetornarOPorcentual() throws Exception {
 		calculadora.processaQuatro();
 		calculadora.processaPorcentual();
-		assertEquals(0.04, calculadora.getDisplay().retornaDoubleDaView(),0);
+		assertEquals(4.0, calculadora.getDisplay().retornaDoubleDaView(),0);
 	}
 	
 	@Test
@@ -139,6 +139,6 @@ public class CalculadoraTest {
 		calculadora.processaIgual();
 		calculadora.processaC();
 		calculadora.processaUndo();
-		assertEquals(10, calculadora.getDisplay().retornaDoubleDaView(),0);
+		assertEquals(100, calculadora.getDisplay().retornaDoubleDaView(),0);
 	}
 }
